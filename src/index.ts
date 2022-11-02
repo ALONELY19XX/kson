@@ -242,8 +242,53 @@ function stringify(
   return JSON.stringify(obj)
 }
 
-function parse() {
-  console.log('parse')
+function parse(
+  obj: any,
+  sourceCase: SupportedCases,
+  targetCase: SupportedCases,
+  options?: any
+) {
+  if (sourceCase === 'camel' && targetCase === 'kebab') {
+    return JSON.parse(obj, fromCamelToKebab)
+  }
+  if (sourceCase === 'camel' && targetCase === 'snake') {
+    return JSON.parse(obj, fromCamelToSnake)
+  }
+  if (sourceCase === 'camel' && targetCase === 'pascal') {
+    return JSON.parse(obj, fromCamelToPascal)
+  }
+
+  if (sourceCase === 'snake' && targetCase === 'camel') {
+    return JSON.parse(obj, fromSnakeToCamel)
+  }
+  if (sourceCase === 'snake' && targetCase === 'kebab') {
+    return JSON.parse(obj, fromSnakeToKebab)
+  }
+  if (sourceCase === 'snake' && targetCase === 'pascal') {
+    return JSON.parse(obj, fromSnakeToPascal)
+  }
+
+  if (sourceCase === 'kebab' && targetCase === 'camel') {
+    return JSON.parse(obj, fromKebabToCamel)
+  }
+  if (sourceCase === 'kebab' && targetCase === 'snake') {
+    return JSON.parse(obj, fromKebabToSnake)
+  }
+  if (sourceCase === 'kebab' && targetCase === 'pascal') {
+    return JSON.parse(obj, fromKebabToPascal)
+  }
+
+  if (sourceCase === 'pascal' && targetCase === 'camel') {
+    return JSON.parse(obj, fromPascalToCamel)
+  }
+  if (sourceCase === 'pascal' && targetCase === 'snake') {
+    return JSON.parse(obj, fromPascalToSnake)
+  }
+  if (sourceCase === 'pascal' && targetCase === 'kebab') {
+    return JSON.parse(obj, fromPascalToKebab)
+  }
+
+  return JSON.parse(obj)
 }
 
 export default { stringify, parse }
