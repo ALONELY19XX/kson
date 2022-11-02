@@ -1,0 +1,29 @@
+{
+  "name": "kson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALONELY19XX/kson.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ALONELY19XX/kson/issues"
+  },
+  "homepage": "https://github.com/ALONELY19XX/kson#readme",
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "typescript": "^4.8.4"
+  }
+}
